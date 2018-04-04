@@ -1,0 +1,119 @@
+public class Sample1 {
+
+	public static void main(String[] args) {
+		AppController appcontroller = new AppController();
+		appcontroller.run();
+		
+	}
+  import java.util.Scanner;
+public class AppController {
+List list;
+	
+	public void run() 
+	{
+		this.list = new List();
+		
+		System.out.println("노드를 생성합니다.");
+		
+		list.insert();
+		System.out.println("");
+		System.out.println("짝수값을 가지는 노드를 삭제합니까?");
+		
+		System.out.println("삭제하려면 1번을 누르세요");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int x = scan.nextInt();
+		
+		if(x==1) 
+		{
+		System.out.println("짝수값의 노드를 삭제합니다.");
+		list.delete();
+		}
+		else
+		{System.out.println("노드를 삭제하지 않습니다.");}
+	
+}
+}
+
+}
+public class List {
+private int size;public class Node {
+	private int data;
+	private Node next;
+
+	public Node() 
+	{
+		this.data=0;
+		this.next=null;
+	}
+	public Node(int data) 
+	{
+		this.data=data;
+		this.next=null;
+	}
+	public Node(int newdata,Node newnext) 
+	{
+		this.data=newdata;
+		this.next=newnext;
+	}
+	public void setdata(int data) {
+		this.data=data;
+	}
+	public void setnext(Node next) {
+		this.next=next;
+	}
+	public int data() {
+		return this.data;
+	}
+	public Node next() {
+		return this.next;
+	}
+	
+	
+}
+private Node head;
+
+public void insert() {
+	for(int i=1; i<=100 ; i++) {
+	Node newNode = new Node();
+	newNode.setdata(i);
+	newNode.setnext(head);
+	head = newNode;
+	System.out.print(head.data()+" ");
+}	
+}
+
+
+
+public void delete() {
+	Node p = head;
+	/*while(p !=null) 
+	{if(p.data()%2 == 0) 
+		{
+			if(p == head) {
+				head = head.next();
+			}
+			else
+				{ q.setnext(p.next()); }
+		}
+		else 
+		{
+			q = p;
+			p = p.next();
+		}}*/
+	if(p.data()%2 == 0)
+	{}
+	else 
+	{System.out.println(p.data());}
+	
+	for(int i=1; p.next() != null ; i++) 
+	{
+		if(p.next().data()%2 == 0)
+		{p =p.next().next();}
+		else
+		{p =p.next();}
+		
+		System.out.print(p.data()+" ");
+	
+	}}}
